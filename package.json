@@ -11,7 +11,6 @@
     "build": "cross-env NODE_ENV=production gulp build",
     "dev": "cross-env NODE_ENV=production gulp dev",
     "webp": "gulp webp",
-    "afiv": "gulp avif",
     "test": "stylelint \"./src/**/*.scss\""
   },
   "husky": {
@@ -53,6 +52,7 @@
     "postcss": "^8.4.30",
     "sass": "^1.68.0",
     "stylelint": "^15.11.0",
+    "tailwindcss": "^3.4.1",
     "webpack": "^5.88.2",
     "webpack-stream": "^7.0.0"
   },

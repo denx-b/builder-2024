@@ -3,6 +3,7 @@ import gulpSass from 'gulp-sass';
 import autoprefixer from 'autoprefixer';
 import postcss from 'gulp-postcss';
 import cleanCSS from 'gulp-clean-css';
+import tailwind from 'tailwindcss';
 
 const sass = gulpSass(dartSass);
 
@@ -15,7 +16,9 @@ export const styles = () => {
             })
         ))
         .pipe(sass())
-        .pipe(postcss([autoprefixer({
+        .pipe(postcss([
+          tailwind('./tailwind.config.js'),
+          autoprefixer({
             grid: true,
             overrideBrowserslist: ["last 3 versions"],
             cascade: false,

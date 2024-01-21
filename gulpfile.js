@@ -22,8 +22,9 @@ const htmlTasks = gulp.parallel(html, pages)
 
 function watcher() {
     gulp.watch(path.watch.assets, copy)
+    gulp.watch(path.watch.html, styles)
     gulp.watch(path.watch.html, htmlTasks)
-    gulp.watch(path.watch.css, styles);
+    gulp.watch(path.watch.css, styles)
     gulp.watch(path.watch.js, scripts)
     gulp.watch(path.watch.sprite, sprite)
 }
@@ -35,4 +36,4 @@ const start = gulp.series(clean, copy, sprite, mainTasks, gulp.parallel(watcher,
 const dev = gulp.series(clean, copy, sprite, buildTasks, gulp.parallel(watcher, server));
 const build = gulp.series(clean, copy, sprite, buildTasks);
 
-export {start, dev, build, createWebp as webp, createAvif as avif, optimizePng as png, optimizeJpg as jpg}
+export {start, dev, build, sprite, createWebp as webp}

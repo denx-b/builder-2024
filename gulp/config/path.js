@@ -6,7 +6,7 @@ export const path = {
         assets: `${buildFolder}/assets`,
         html: `${buildFolder}/`,
         pages: `${buildFolder}/pages/`,
-        css: `${buildFolder}/`,
+        css: `${buildFolder}/css/`,
         js: `${buildFolder}/js/`,
         images: `${buildFolder}/assets/image/`,
         svg: `${buildFolder}/assets/image/`,

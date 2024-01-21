@@ -42,6 +42,7 @@ export const optimizeJpg = () =>
         .pipe(imagemin([mozJpeg({quality: 90, progressive: true})]))
         .pipe(app.gulp.dest(app.path.build.images));
 
+
 export const  optimizePng = () =>
     app.gulp
         .src(`${app.path.build.images}**/*.png`)
@@ -51,7 +52,7 @@ export const  optimizePng = () =>
                     speed: 1,
                     strip: true,
                     dithering: 1,
-                    quality: [0.8],
+                    quality: [0.8, 0.9],
                 })]))
         .pipe(app.gulp.dest(app.path.build.images));
 

@@ -1,7 +1,6 @@
 // Vendor
 // ---------------------------------
 
-@import "vendor/normalize";
 // Swiper 10.2.0
 // @import "vendor/swiper";
 
@@ -11,18 +10,20 @@
 @import "variables";
 @import "mixins";
 @import "global/fonts";
-@import "global/reboot";
 @import "global/utils";
-@import "global/container";
 
 // Blocks
 // ---------------------------------
-
-@import "blocks/example";
-
 @import "blocks/btn";
 @import "blocks/modal";
+@import "blocks/header";
+@import "blocks/nav";
 
+// Tailwind
+// ---------------------------------
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 // ---------------------------------
 
