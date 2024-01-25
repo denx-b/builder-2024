@@ -4,6 +4,12 @@
 // Swiper 10.2.0
 // @import "vendor/swiper";
 
+// Tailwind
+// ---------------------------------
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // Global
 // ---------------------------------
 
@@ -14,16 +20,9 @@
 
 // Blocks
 // ---------------------------------
+@import "common";
 @import "blocks/btn";
 @import "blocks/modal";
-@import "blocks/header";
-@import "blocks/nav";
-
-// Tailwind
-// ---------------------------------
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 // ---------------------------------
 

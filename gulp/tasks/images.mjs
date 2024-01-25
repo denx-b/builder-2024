@@ -13,7 +13,6 @@ export const sprite = () =>
         .pipe(app.plugins.rename('sprite.svg'))
         .pipe(app.gulp.dest(app.path.build.sprite));
 
-
 export const optimizeSvg = () =>
     app.gulp.src(`${app.path.build.images}**/*.svg`)
         .pipe(
@@ -35,13 +34,11 @@ export const optimizeSvg = () =>
                 })]))
         .pipe(app.gulp.dest(app.path.build.images));
 
-
 export const optimizeJpg = () =>
     app.gulp
         .src(`${app.path.build.images}**/*.{jpg,jpeg}`)
         .pipe(imagemin([mozJpeg({quality: 90, progressive: true})]))
         .pipe(app.gulp.dest(app.path.build.images));
-
 
 export const  optimizePng = () =>
     app.gulp

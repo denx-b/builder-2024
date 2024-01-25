@@ -9,6 +9,8 @@ export class Modals {
         this._modalOpenElements = document.querySelectorAll('[data-open-modal]');
         this._openedModalElement = null;
         this._modalName = null;
+        this._modalCurrentButton = null;
+        this._modalCurrent = null;
         this._enableScrolling = true;
         this._settingKey = 'default';
 
@@ -78,6 +80,7 @@ export class Modals {
         evt.preventDefault();
 
         this._modalName = target.closest('[data-open-modal]').dataset.openModal;
+        this._modalCurrentButton = target;
 
         if (!this._modalName) {
             return;
@@ -151,6 +154,7 @@ export class Modals {
 
         this._setSettings(modalName);
         modal.classList.add('is-active');
+        this._modalCurrent = modal
 
         if (!this._openedModalElement) {
             this._scrollLock.disableScrolling();
