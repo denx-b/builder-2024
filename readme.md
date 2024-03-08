@@ -7,7 +7,7 @@
 Основные команды сборщика:
 ```bash
 npm ci или npm i
-npm run start
+npm run serve
 npm run build
 ```
 Всегда, при налчии package-lock.json, производим установку командой `npm ci`, при отсутствии package-lock.json или изменении зависимостей в package.json, установку производим командой `npm i`  

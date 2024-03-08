@@ -30,7 +30,15 @@ module.exports = {
                 options: {
                     presets: ['@babel/preset-env'],
                 },
-            }
+            },
+            {
+                test: /\.s[ac]ss|css$/i, // Регулярное выражение для .scss и .sass файлов
+                use: [
+                    'style-loader', // Создаёт стили из JS строк
+                    'css-loader',     // Переводит CSS в CommonJS
+                    'sass-loader'     // Компилирует Sass в CSS
+                ],
+            },
         ],
     },
     plugins: [

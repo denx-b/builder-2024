@@ -1,5 +1,6 @@
 import { iosVhFix } from './utils/ios-vh-fix.js'
 import { initModals } from './modules/modals/init-modals.js'
+import { swiper } from './modules/swiper.js'
 import { test } from './modules/test/test.js'
 
 // ---------------------------------
@@ -12,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
   initModals()
+  swiper()
 
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
