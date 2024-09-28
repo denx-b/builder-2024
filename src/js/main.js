@@ -1,7 +1,7 @@
 import { iosVhFix } from './utils/ios-vh-fix.js'
 import { initModals } from './modules/modals/init-modals.js'
 import { swiper } from './modules/swiper.js'
-import { test } from './modules/test/test.js'
+import { forms } from './modules/forms.js'
 import { aosAnimation } from './modules/aosAnimation.js'
 
 // ---------------------------------
@@ -16,10 +16,11 @@ window.addEventListener('DOMContentLoaded', () => {
   initModals()
   swiper()
   aosAnimation()
+  forms()
 
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    test()
+
   })
 })
 

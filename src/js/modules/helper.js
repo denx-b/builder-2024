@@ -32,6 +32,43 @@ async function postData(actionUrl, data = {}) {
   }
 }
 
+function getFieldsFromForm(form) {
+  const formData = {};
+
+  // Получаем все элементы формы
+  const elements = form.elements;
+
+  // Проходимся по всем элементам формы
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    const name = element.name;
+    const value = element.value;
+
+    // Проверяем, есть ли у элемента имя, чтобы избежать лишних данных
+    if (name) {
+      if (element.type === 'checkbox') {
+        // Если это чекбокс, добавляем в массив, если отмечен
+        if (!formData[name]) {
+          formData[name] = [];
+        }
+        if (element.checked) {
+          formData[name].push(value);
+        }
+      } else if (element.type === 'radio') {
+        // Если это радио, добавляем значение только если отмечено
+        if (element.checked) {
+          formData[name] = value;
+        }
+      } else {
+        // Для всех остальных типов полей просто добавляем значение
+        formData[name] = value;
+      }
+    }
+  }
+
+  return formData
+}
+
 function redirect(newHost) {
   // Текущая категория и аргументы в адресной строке
   const currentPath = window.location.pathname;
@@ -40,4 +77,4 @@ function redirect(newHost) {
   window.location.href = `${newHost}${currentPath}${currentSearch}`;
 }
 
-export {hasClass, postData, redirect}
+export {hasClass, postData, getFieldsFromForm, redirect}
