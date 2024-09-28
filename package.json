@@ -9,6 +9,7 @@
   "scripts": {
     "serve": "cross-env NODE_ENV=development gulp start",
     "build": "cross-env NODE_ENV=production gulp build",
+    "buildSmall": "cross-env NODE_ENV=production gulp buildSmall",
     "dev": "cross-env NODE_ENV=production gulp dev",
     "webp": "gulp webp",
     "test": "stylelint \"./src/**/*.scss\""

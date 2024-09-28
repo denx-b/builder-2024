@@ -35,5 +35,6 @@ const buildTasks = gulp.parallel(htmlTasks, styles, scripts, optimizeJpg, optimi
 const start = gulp.series(clean, copy, sprite, mainTasks, gulp.parallel(watcher, server));
 const dev = gulp.series(clean, copy, sprite, buildTasks, gulp.parallel(watcher, server));
 const build = gulp.series(clean, copy, sprite, buildTasks);
+const buildSmall = gulp.series(clean, copy, sprite, styles, scripts);
 
-export {start, dev, build, sprite, createWebp as webp}
+export {start, dev, build, buildSmall, sprite, createWebp as webp}
